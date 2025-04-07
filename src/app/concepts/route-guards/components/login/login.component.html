@@ -1,0 +1,46 @@
+<form [formGroup]="userForm">
+  <legend>Login</legend>
+  <div class="input-container">
+    <label class="font-normal" for="email"> Email: </label>
+    <div>
+      <input formControlName="email" type="text" id="email" />
+      <ng-container
+        [ngTemplateOutlet]="errorLog"
+        [ngTemplateOutletContext]="{
+          control: userForm.controls['email'],
+          key: 'Email'
+        }"
+      />
+    </div>
+  </div>
+  <div class="input-container">
+    <label class="font-normal" for="password"> Password: </label>
+    <div>
+      <input formControlName="password" type="password" id="password" />
+      <ng-container
+        [ngTemplateOutlet]="errorLog"
+        [ngTemplateOutletContext]="{
+          control: userForm.controls['password'],
+          key: 'Password'
+        }"
+      />
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="userForm.invalid" (click)="submit()">
+    Submit
+  </button>
+</form>
+
+<ng-template #errorLog let-control="control" let-key="key">
+  @if (control?.touched && control?.errors) { @if (control.errors['required']) {
+  <div class="error-message">{{ key }} is required</div>
+  } @else if (control.errors['email']) {
+  <div class="error-message">{{ key }} is invalid</div>
+  } @else if (control.errors['passwordNeedsFollowRules']) {
+  <div class="error-message">
+    {{ key }} should contain at least one capital letter, lowercase letter,
+    number, and special character.
+  </div>
+  } }
+</ng-template>

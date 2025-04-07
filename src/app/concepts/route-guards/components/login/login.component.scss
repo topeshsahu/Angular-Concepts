@@ -1,0 +1,42 @@
+@import "typography";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 32px;
+    border-radius: 16px;
+    height: 220px;
+    width: 220px;
+    background-color: #8080800d;
+
+    .input-container {
+
+      height: 64px;
+
+      .error-message {
+        font-size: $font-small;
+        color: red;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+    }
+
+    button {
+      padding: 4px;
+      width: fit-content;
+      align-self: center;
+      font-size: $font-normal;
+      margin-top: 18px;
+    }
+  }
+
+}
