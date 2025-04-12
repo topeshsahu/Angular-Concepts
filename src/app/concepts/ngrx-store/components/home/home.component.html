@@ -1,1 +1,9 @@
 <h1>Ngrx Store</h1>
+<p>Welcome to the Ngrx Store example!</p>
+
+<h3>Count: {{ count$ | async }}</h3>
+<div style="display: flex; gap: 8px">
+  <button (click)="increment()">+</button>
+  <button (click)="decrement()">-</button>
+  <button (click)="reset()">reset</button>
+</div>
