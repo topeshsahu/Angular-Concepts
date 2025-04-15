@@ -1,6 +1,4 @@
-export interface CounterState {
-  count: number;
-}
+import { CounterState } from "../../../model";
 
 export const initialState: CounterState = {
   count: 0,

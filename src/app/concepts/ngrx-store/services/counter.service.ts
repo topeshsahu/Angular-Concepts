@@ -1,8 +1,8 @@
 import { inject, Injectable, OnInit } from "@angular/core";
 import { Store } from "@ngrx/store";
-import { selectCount } from "../store/counter.selector";
+import { selectCount } from "../store/counter-store/counter.selector";
 import { Observable } from "rxjs";
-import { decrement, increment, reset } from "../store/counter.actions";
+import { decrement, increment, reset } from "../store/counter-store/counter.actions";
 
 @Injectable({
   providedIn: "root",
