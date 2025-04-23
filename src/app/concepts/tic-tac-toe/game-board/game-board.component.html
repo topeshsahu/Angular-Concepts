@@ -1,0 +1,60 @@
+<div class="setup-form">
+  <input
+    [disabled]="isGameStarted"
+    type="text"
+    [(ngModel)]="player1"
+    placeholder="Player 1 Name"
+    required
+  />
+  <input
+    [disabled]="isGameStarted"
+    type="text"
+    [(ngModel)]="player2"
+    placeholder="Player 2 Name"
+    required
+  />
+  <input
+    [disabled]="isGameStarted"
+    type="number"
+    [(ngModel)]="boardSize"
+    placeholder="Board Size"
+    min="3"
+    max="10"
+  />
+  <button
+    [disabled]="isGameStarted || !player1 || !player2"
+    (click)="startGame()"
+  >
+    Start
+  </button>
+</div>
+<hr />
+@if(isGameStarted){
+<div class="player-info">
+  <h2>Player 1: {{ player1 }}; Symbol: X</h2>
+  <h2>Player 2: {{ player2 }}; Symbol: O</h2>
+</div>
+<div class="game-info">
+  <h2>Current Player: {{ whosTurn === Turn.PLAYER1 ? player1 : player2 }}</h2>
+</div>
+@if(numberOfMoves === 0 && !isGameOver){
+<h2 style="color: red">Draw!</h2>
+}@else if(isGameOver){
+<h2 style="color: green">
+  Winner: {{ whosTurn === Turn.PLAYER1 ? player1 : player2 }}
+</h2>
+} @if(isGameOver || numberOfMoves === 0){
+<button (click)="resetGame()">Reset</button>
+}
+<table>
+  @for(row of board;track rowIndex;let rowIndex = $index){
+  <tr>
+    @for(cell of row;track cellIndex;let cellIndex = $index){
+    <td (click)="makeMove(rowIndex, cellIndex)">
+      {{ cell }}
+    </td>
+    }
+  </tr>
+  }
+</table>
+}

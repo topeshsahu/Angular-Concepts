@@ -1,0 +1,55 @@
+:host {
+  .setup-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    input {
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background-color: #f0f0f0;
+      cursor: pointer;
+    }
+  }
+
+  .player-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    h2 {
+      margin: 0;
+    }
+  }
+
+  table {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    tr {
+      display: flex;
+      flex-grow: 1;
+      border: 1px solid #ccc;
+
+      td {
+        width: 50px;
+        height: 50px;
+        border: 1px solid #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
