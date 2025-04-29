@@ -1,5 +1,5 @@
+import { UserState } from "@model";
 import { createFeatureSelector, createSelector } from "@ngrx/store";
-import { UserState } from "../../../model";
 
 const userSelectState = createFeatureSelector<UserState>("auth");
 

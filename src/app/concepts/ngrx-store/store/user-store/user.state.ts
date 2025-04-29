@@ -1,4 +1,4 @@
-import { UserState } from "../../../model";
+import { UserState } from "@model";
 
 export const initialUserState: UserState = {
   user: null,

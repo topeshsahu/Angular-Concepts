@@ -1,17 +1,10 @@
+import { AsyncPipe } from "@angular/common";
 import { Component, inject } from "@angular/core";
-import { Store } from "@ngrx/store";
+import { AuthUser } from "@model";
 import { Observable } from "rxjs";
-import { selectCount } from "../../store/counter-store/counter.selector";
-import { AsyncPipe, JsonPipe } from "@angular/common";
-import {
-  decrement,
-  increment,
-  reset,
-} from "../../store/counter-store/counter.actions";
+import { AuthService } from "../../services/auth.service";
 import { CounterService } from "../../services/counter.service";
 import { LoginComponent } from "../login/login.component";
-import { AuthUser } from "../../../model";
-import { AuthService } from "../../services/auth.service";
 
 @Component({
   selector: "app-home",

@@ -1,5 +1,5 @@
+import { CounterState } from "@model";
 import { createFeatureSelector, createSelector } from "@ngrx/store";
-import { CounterState } from "../../../model";
 
 const selectCounterState = createFeatureSelector<CounterState>("counter");
 
