@@ -10,6 +10,7 @@ export class ApiService {
   http = inject(HttpClient);
 
   getPosts(): Observable<Post> {
+    // TODO: Below configuration does not suppport full path url: http://localhost:3000/api/posts
     return this.http.get<Post>("/api/posts");
   }
 }

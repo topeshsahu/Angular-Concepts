@@ -1,8 +1,8 @@
 [
   {
     "context": ["/api/**"],
-    "target": "http://localhost:4000",
-    "secure": false,
+    "target": "http://localhost:3000",
+    "secure": true,
     "changeOrigin": true,
     "logLevel": "debug"
   }

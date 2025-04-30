@@ -61,6 +61,7 @@
               "buildTarget": "Angular:build:production"
             },
             "development": {
+              "proxyConfig": "proxy.config.json",
               "buildTarget": "Angular:build:development"
             }
           },
