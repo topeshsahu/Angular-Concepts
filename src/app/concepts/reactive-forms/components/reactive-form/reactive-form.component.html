@@ -1,0 +1,18 @@
+<h1>Reactive Form</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  Name: <input type="text" formControlName="name" /> <br />
+  Email: <input type="text" formControlName="email" /> <br />
+  Address:
+  <div formArrayName="address">
+    <div
+      *ngFor="let addressGroup of form.get('address').controls; let i = index"
+      [formGroupName]="i"
+    >
+      <input formControlName="street" placeholder="Street" /> <br />
+      <input formControlName="city" placeholder="City" /> <br />
+      <input formControlName="country" placeholder="Country" /> <br />
+    </div>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
