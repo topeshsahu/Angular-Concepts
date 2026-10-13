@@ -15,14 +15,15 @@
   Email: <input type="text" formControlName="email" /> <br />
   Address:
   <div formArrayName="address">
-    <div
-      *ngFor="let addressGroup of addressControl.controls; let i = index"
-      [formGroupName]="i"
-    >
-      <input formControlName="street" placeholder="Street" /> <br />
-      <input formControlName="city" placeholder="City" /> <br />
-      <input formControlName="country" placeholder="Country" /> <br />
-    </div>
+    @for (addressGroup of addressControl.controls; track addressGroup; let i = $index) {
+      <div
+        [formGroupName]="i"
+        >
+        <input formControlName="street" placeholder="Street" /> <br />
+        <input formControlName="city" placeholder="City" /> <br />
+        <input formControlName="country" placeholder="Country" /> <br />
+      </div>
+    }
   </div>
 
   <button type="submit">Submit</button>

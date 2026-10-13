@@ -1,4 +1,4 @@
-import { NgFor } from "@angular/common";
+
 import { Component } from "@angular/core";
 import {
   FormArray,
@@ -11,7 +11,7 @@ import { Details } from "../../../../model";
 
 @Component({
   selector: "app-reactive-form",
-  imports: [ReactiveFormsModule, NgFor],
+  imports: [ReactiveFormsModule],
   templateUrl: "./reactive-form.component.html",
   styleUrl: "./reactive-form.component.scss",
 })
