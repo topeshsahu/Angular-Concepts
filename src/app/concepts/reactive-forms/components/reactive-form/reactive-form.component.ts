@@ -12,11 +12,13 @@ import { Details } from "../../../../model";
 @Component({
   selector: "app-reactive-form",
   standalone: true,
-  imports: [ReactiveFormsModule, NgFor],
+  imports: [ReactiveFormsModule, NgFor, JsonPipe],
   templateUrl: "./reactive-form.component.html",
   styleUrl: "./reactive-form.component.scss",
 })
 export class ReactiveFormComponent {
+  formName = new FormControl("");
+  formArray = new FormArray([new FormControl("")]);
   form: FormGroup<Details> = new FormGroup({
     name: new FormControl(""),
     email: new FormControl(""),
@@ -28,11 +30,28 @@ export class ReactiveFormComponent {
           country: new FormControl(""),
         }),
       ],
-      Validators.required
+      Validators.required,
     ),
   });
 
+  get addressControl(): any {
+    return this.form.get("address") as FormArray;
+  }
+
   onSubmit(): void {
-    console.log(this.form);
+    this.form.get("name")?.patchValue("shubham");
+    this.form.get("email")?.setValue("lund");
+    this.form.get("address")?.patchValue([
+      {
+        city: "backchod",
+        country: "india",
+        street: "backchod",
+      },
+    ]);
+    console.log(this.form.value);
+  }
+
+  addControls(): void {
+    this.formArray.controls.push(new FormControl(""));
   }
 }
