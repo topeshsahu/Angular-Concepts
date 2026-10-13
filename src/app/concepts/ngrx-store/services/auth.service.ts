@@ -2,12 +2,12 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { Observable, of } from "rxjs";
-import { AuthUser, Credentials, UserRoles } from "../../../model";
-import { logoutAction } from "../store/user-store/user.actions";
 import {
   selectIsAuthenticated,
   selectUser,
 } from "../store/user-store/user.selector";
+import { AuthUser, Credentials, UserRoles } from "../../../model/index";
+import { logoutAction } from "../store/user-store/user.actions";
 
 @Injectable({ providedIn: "root" })
 export class AuthService {

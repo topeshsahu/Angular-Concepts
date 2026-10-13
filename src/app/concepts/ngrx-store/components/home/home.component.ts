@@ -1,10 +1,10 @@
 import { AsyncPipe } from "@angular/common";
 import { Component, inject } from "@angular/core";
-import { AuthUser } from "@model";
 import { Observable } from "rxjs";
-import { AuthService } from "../../services/auth.service";
-import { CounterService } from "../../services/counter.service";
 import { LoginComponent } from "../login/login.component";
+import { AuthUser } from "../../../../model/ngrx-user-models/user.model";
+import { CounterService } from "../../services/counter.service";
+import { AuthService } from "../../services/auth.service";
 
 @Component({
   selector: "app-home",
