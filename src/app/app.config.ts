@@ -5,7 +5,7 @@ import { provideStore } from "@ngrx/store";
 import { counterReducer, userReducer } from "./concepts/ngrx-store/store";
 import { provideStoreDevtools } from "@ngrx/store-devtools";
 import { provideEffects } from "@ngrx/effects";
-import { provideHttpClient } from "@angular/common/http";
+import { provideHttpClient, withXhr } from "@angular/common/http";
 
 export const appConfig: ApplicationConfig = {
   // providers for the router-guard
@@ -17,6 +17,6 @@ export const appConfig: ApplicationConfig = {
       maxAge: 25,
       logOnly: false,
     }),
-    provideHttpClient(),
+    provideHttpClient(withXhr()),
   ],
 };

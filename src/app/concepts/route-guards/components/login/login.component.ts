@@ -1,5 +1,5 @@
 import { NgTemplateOutlet } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import {
   AbstractControl,
   FormControl,
@@ -24,6 +24,7 @@ const validatePassword = (
     selector: 'app-login',
     imports: [ReactiveFormsModule, RouterModule, NgTemplateOutlet],
     templateUrl: './login.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './login.component.scss'
 })
 export class LoginComponent {

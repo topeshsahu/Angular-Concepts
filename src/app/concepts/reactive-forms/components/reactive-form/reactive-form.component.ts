@@ -1,5 +1,5 @@
 
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import {
   FormArray,
   FormControl,
@@ -13,6 +13,7 @@ import { Details } from "../../../../model";
   selector: "app-reactive-form",
   imports: [ReactiveFormsModule],
   templateUrl: "./reactive-form.component.html",
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: "./reactive-form.component.scss",
 })
 export class ReactiveFormComponent {
